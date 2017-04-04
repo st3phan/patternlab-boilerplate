@@ -2,7 +2,8 @@
   "env": {
     "node": true,
     "builtin": true,
-    "es6": true
+    "es6": true,
+    "browser": true
   },
   "parserOptions": {
       "ecmaVersion": 6,
@@ -23,7 +24,7 @@
     "indent": [1, 4, {"SwitchCase": 1, "VariableDeclarator": 1}],
     "lines-around-comment": [1, {
       "beforeBlockComment": true,
-      "beforeLineComment": true,
+      "beforeLineComment": false,
       "allowBlockStart": true,
       "allowObjectStart": true,
       "allowArrayStart": true

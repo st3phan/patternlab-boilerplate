@@ -1,0 +1,24 @@
+/**********************************************************
+    Spaces
+***********************************************************/
+
+$space-xs: #{6/18}rem;
+$space-s: #{9/18}rem;
+$space-m: #{18/18}rem;
+$space-l: #{27/18}rem;
+$space-xl: #{36/18}rem;
+$space-xxl: #{54/18}rem;
+$space-inset-default: $space-m;
+$space-inset-xs: $space-xs;
+$space-inset-s: $space-s;
+$space-inset-m: $space-m;
+$space-inset-l: $space-l;
+$space-inset-xl: $space-xl;
+$space-inset-xl: $space-xxl;
+$space-stack-default: 0 0 $space-m 0;
+$space-stack-xs: 0 0 $space-xs 0;
+$space-stack-s: 0 0 $space-s 0;
+$space-stack-m: 0 0 $space-m 0;
+$space-stack-l: 0 0 $space-l 0;
+$space-stack-xl: 0 0 $space-xl 0;
+$space-stack-xxl: 0 0 $space-xxl 0;

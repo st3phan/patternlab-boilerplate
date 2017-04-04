@@ -13,5 +13,10 @@
     "js": {
         "rootFile": "main.js",
         "bundleFile": "bundle.js"
+    },
+    "svg": {
+        "svgstore": {
+            "inlineSvg": "true"
+        }
     }
 }

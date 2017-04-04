@@ -1,3 +1,25 @@
-body {
-    background-color: blue;
-}
+// Settings: variables, config-switches
+@import "./1_settings/space";
+@import "./1_settings/grid";
+@import "./1_settings/mediaqueries";
+
+// Tools: mixins and functions
+@import "./2_tools/grid";
+@import "./2_tools/typography";
+
+// Generic: ground-zero styling (normalize, reset)
+@import "./3_generic/scaffolding";
+@import "./3_generic/fonts";
+
+// Base: unclassed HTML element styles
+@import "./4_base/base";
+@import "./4_base/typography";
+
+// Objects: cosmetic-free design patterns
+@import './5_objects/containers';
+
+// Components: UI-chunks (more complex components)
+@import './6_components/lists';
+
+// Helpers: helpers, overrides
+@import './7_helpers/hide';

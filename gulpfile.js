@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   argv = require('minimist')(process.argv.slice(2)),
   chalk = require('chalk');
 
+// SVO: Load custom gulp tasks
 require('./gulp');
 
 /**
@@ -117,15 +118,12 @@ function build(done) {
 }
 
 gulp.task('pl-assets', gulp.series(
-  // SVO: Javascript is replaced by browserify
-  // 'pl-copy:js',
-  'browserify',
+  'browserify', // SVO: Replaces the javascript task
+  gulp.series('sass', 'pl-copy:css', function (done) { done(); }), // SVO: Sass now runs before the CSS copy task
+  'svg', // SVO: custom svg task
   'pl-copy:img',
   'pl-copy:favicon',
   'pl-copy:font',
-  // SVO: Sass now runs before the CSS copy task
-  gulp.series('sass', 'pl-copy:css', function (done) { done(); }),
-  // 'pl-copy:css',
   'pl-copy:styleguide',
   'pl-copy:styleguide-css'
 ));
@@ -200,6 +198,13 @@ function watch() {
       paths: [normalizePath(paths().source.css, '**', '*.scss')],
       config: { awaitWriteFinish: true },
       tasks: gulp.series('sass', 'pl-copy:css', reloadCSS)
+    },
+    // SVO: Custom SVG task
+    {
+      name: 'SVG',
+      paths: [normalizePath(paths().source.svg, '**', '*.svg')],
+      config: { awaitWriteFinish: true },
+      tasks: gulp.series('svg', reload)
     },
     {
       name: 'CSS',

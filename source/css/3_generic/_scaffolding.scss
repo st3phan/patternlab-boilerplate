@@ -1,0 +1,98 @@
+html {
+    height: 100%;
+}
+
+ body {
+    height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+
+    // The content of this pseudo element is used in the mediaqueries javascript module
+    &:after {
+        display: none;
+
+        @media #{$tiny-up} {
+            content: "tiny-up";
+        }
+
+        @media #{$small-up} {
+            content: "small-up";
+        }
+
+        @media #{$medium-up} {
+            content: "medium-up";
+        }
+
+        @media #{$large-up} {
+            content: "large-up";
+        }
+
+        @media #{$xlarge-up} {
+            content: "xlarge-up";
+        }
+    }
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ p,
+ blockquote,
+ figure,
+ ol,
+ ul,
+ li,
+ pre {
+    margin: 0;
+    padding: 0;
+ }
+
+ main {
+     display: block;
+ }
+
+ ul,
+ ol,
+ li {
+     list-style-type: none;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4 {
+    font-size: inherit;
+ }
+
+ strong {
+    font-weight: bold;
+ }
+
+ a,
+ button {
+    color: inherit;
+ }
+
+ a {
+    text-decoration: none;
+ }
+
+ button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+ }
+
+ img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    vertical-align: bottom;
+ }

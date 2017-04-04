@@ -1,0 +1,22 @@
+/**********************************************************
+Typography functions
+***********************************************************/
+
+@function rem($size, $rem-base) {
+    $remSize: $size / $rem-base;
+    @return #{$remSize}rem;
+}
+
+@function em($pixels, $context: $rem-base) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1em;
+}
+
+@function lineheight($lineheight, $fontsize) {
+    @return $lineheight/$fontsize;
+}
