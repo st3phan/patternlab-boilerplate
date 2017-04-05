@@ -119,10 +119,10 @@ function build(done) {
 
 gulp.task('pl-assets', gulp.series(
   'browserify', // SVO: Replaces the javascript task
-  gulp.series('sass', 'pl-copy:css', function (done) { done(); }), // SVO: Sass now runs before the CSS copy task
   'svg', // SVO: custom svg task
   'pl-copy:img',
   'pl-copy:favicon',
+  gulp.series('sass', 'pl-copy:css', function (done) { done(); }), // SVO: Sass now runs before the CSS copy task
   'pl-copy:font',
   'pl-copy:styleguide',
   'pl-copy:styleguide-css'
@@ -197,7 +197,7 @@ function watch() {
       name: 'Sass',
       paths: [normalizePath(paths().source.css, '**', '*.scss')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series('sass', 'pl-copy:css', reloadCSS)
+      tasks: gulp.series('sass', reloadCSS)
     },
     // SVO: Custom SVG task
     {
